@@ -19,7 +19,12 @@ xui.Class('App', 'xui.Module',{
         iniComponents : function(){
             // [[Code created by CrossUI RAD Studio
             var host=this, children=[], append=function(child){children.push(child.get(0));};
-
+            
+            append(
+                xui.create("Module.Firestore49", "xui.Module")
+                .setHost(host,"module_firestore491")
+            );
+            
             return children;
             // ]]Code created by CrossUI RAD Studio
         },
@@ -28,6 +33,24 @@ xui.Class('App', 'xui.Module',{
         customAppend : function(parent, subId, left, top){
             // "return false" will cause all the internal UI controls will be added to the parent panel
             return false;
+        },
+        events:{
+            "onReady" : [
+                {
+                    "desc" : "auth",
+                    "type" : "module",
+                    "target" : "module_firestore491",
+                    "args" : [
+                        "{page.module_firestore491.ensureFirebaseAuth}"
+                    ],
+                    "method" : "$Functions.ensureFirebaseAuth",
+                    "redirection" : "other:callback:call"
+                },
+                "_page_onready"
+            ]
+        },
+        _page_onready:function(e,i){
+
         }
         /*,
         // To determine how properties affects this module
