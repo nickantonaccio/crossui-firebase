@@ -245,6 +245,39 @@ xui.Class('App', 'xui.Module',{
             append(
                 xui.create("Module.Firestore49", "xui.Module")
                 .setHost(host,"module_firestore491")
+                .setEvents({
+                    "onFirebaseLogin" : [
+                        {
+                            "desc" : "call listDocsAPI",
+                            "type" : "module",
+                            "target" : "module_firestore491",
+                            "args" : [
+                                "{page.module_firestore491.listDocs}",
+                                undefined,
+                                undefined,
+                                "listDocs",
+                                "todo"
+                            ],
+                            "method" : "$Functions.listDocs",
+                            "redirection" : "other:callback:call"
+                        }
+                    ],
+                    "onDocsList" : [
+                        {
+                            "desc" : "refresh",
+                            "type" : "page",
+                            "target" : "*",
+                            "args" : [
+                                "{page.functions.refreshGrid}",
+                                undefined,
+                                undefined,
+                                "{args[2]}"
+                            ],
+                            "method" : "functions.refreshGrid",
+                            "redirection" : "other:callback:call"
+                        }
+                    ]
+                })
             );
             
             return children;
@@ -273,6 +306,40 @@ xui.Class('App', 'xui.Module',{
         },
         _page_onready:function(e,i){
 
+        },
+        functions:{
+            "refreshGrid" : {
+                "desc" : "",
+                "params" : [
+                    {
+                        "id" : "list",
+                        "type" : "Array",
+                        "desc" : ""
+                    }
+                ],
+                "actions" : [
+                    {
+                        "desc" : "clear rows",
+                        "type" : "control",
+                        "target" : "xui_ui_treegrid11",
+                        "args" : [ ],
+                        "method" : "removeAllRows"
+                    },
+                    {
+                        "desc" : "add rows",
+                        "type" : "control",
+                        "target" : "xui_ui_treegrid11",
+                        "args" : [
+                            "{page.xui_ui_treegrid11.setRawData()}",
+                            undefined,
+                            undefined,
+                            "{args[0]}"
+                        ],
+                        "method" : "setRawData",
+                        "redirection" : "other:callback:call"
+                    }
+                ]
+            }
         }
         /*,
         // To determine how properties affects this module
