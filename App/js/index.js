@@ -232,6 +232,46 @@ xui.Class('App', 'xui.Module',{
                 .setLeft("7.619047619047619em")
                 .setTop("5.257142857142857em")
                 .setCaption("Add New")
+                .onClick([
+                    {
+                        "desc" : "validate",
+                        "type" : "control",
+                        "target" : "xui_ui_group7",
+                        "args" : [
+                            "{page.xui_ui_group7.checkValid()}"
+                        ],
+                        "method" : "checkValid",
+                        "redirection" : "other:callback:call",
+                        "event" : 1
+                    },
+                    {
+                        "desc" : "get data",
+                        "type" : "control",
+                        "target" : "xui_ui_group7",
+                        "args" : [
+                            "{page.xui_ui_group7.getFormValues()}",
+                            "temp",
+                            "data"
+                        ],
+                        "method" : "getFormValues",
+                        "redirection" : "other:callback:call"
+                    },
+                    {
+                        "desc" : "call create api",
+                        "type" : "module",
+                        "target" : "module_firestore491",
+                        "args" : [
+                            "{page.module_firestore491.createDoc}",
+                            undefined,
+                            undefined,
+                            "createDoc",
+                            "todo",
+                            "{temp.data}"
+                        ],
+                        "method" : "$Functions.createDoc",
+                        "redirection" : "other:callback:call"
+                    }
+                ])
             );
             
             append(
