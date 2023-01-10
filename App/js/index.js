@@ -21,6 +21,228 @@ xui.Class('App', 'xui.Module',{
             var host=this, children=[], append=function(child){children.push(child.get(0));};
             
             append(
+                xui.create("xui.UI.Block")
+                .setHost(host,"xui_ui_block30")
+                .setLeft("2.2857142857142856em")
+                .setTop("2.2857142857142856em")
+                .setWidth("21.409523809523808em")
+                .setHeight("21.409523809523808em")
+            );
+            
+            host.xui_ui_block30.append(
+                xui.create("xui.UI.TreeGrid")
+                .setHost(host,"xui_ui_treegrid11")
+                .setLeft("0em")
+                .setTop("0em")
+                .setRowNumbered(true)
+                .setHeader([
+                    {
+                        "id" : "col1",
+                        "width" : "8em",
+                        "type" : "input",
+                        "caption" : "col1"
+                    },
+                    {
+                        "id" : "col2",
+                        "width" : "8em",
+                        "type" : "input",
+                        "caption" : "col2"
+                    },
+                    {
+                        "id" : "col3",
+                        "width" : "8em",
+                        "type" : "input",
+                        "caption" : "col3"
+                    },
+                    {
+                        "id" : "col4",
+                        "width" : "8em",
+                        "type" : "input",
+                        "caption" : "col4"
+                    }
+                ])
+                .setRows([
+                    {
+                        "cells" : [
+                            {
+                                "value" : "A1"
+                            },
+                            {
+                                "value" : "B1"
+                            },
+                            {
+                                "value" : "C1"
+                            },
+                            {
+                                "value" : "D1"
+                            }
+                        ]
+                    },
+                    {
+                        "cells" : [
+                            {
+                                "value" : "A2"
+                            },
+                            {
+                                "value" : "B2"
+                            },
+                            {
+                                "value" : "C2"
+                            },
+                            {
+                                "value" : "D2"
+                            }
+                        ]
+                    },
+                    {
+                        "cells" : [
+                            {
+                                "value" : "A3"
+                            },
+                            {
+                                "value" : "B3"
+                            },
+                            {
+                                "value" : "C3"
+                            },
+                            {
+                                "value" : "D3"
+                            }
+                        ],
+                        "sub" : [
+                            {
+                                "cells" : [
+                                    "A4",
+                                    "B4",
+                                    "C4",
+                                    "D4"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "iniFold" : false,
+                        "cells" : [
+                            {
+                                "value" : "A5"
+                            },
+                            {
+                                "value" : "B5"
+                            },
+                            {
+                                "value" : "C5"
+                            },
+                            {
+                                "value" : "D5"
+                            }
+                        ],
+                        "sub" : [
+                            {
+                                "cells" : [
+                                    {
+                                        "value" : "A6"
+                                    },
+                                    {
+                                        "value" : "B6"
+                                    },
+                                    {
+                                        "value" : "C6"
+                                    },
+                                    {
+                                        "value" : "D6"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ])
+            );
+            
+            append(
+                xui.create("xui.UI.Group")
+                .setHost(host,"xui_ui_group6")
+                .setLeft("28.19047619047619em")
+                .setTop("2.2857142857142856em")
+                .setWidth("18em")
+                .setCaption("Update")
+                .setToggleBtn(false)
+            );
+            
+            host.xui_ui_group6.append(
+                xui.create("xui.UI.Input")
+                .setHost(host,"xui_ui_input26")
+                .setLeft("-0.7619047619047619em")
+                .setTop("0.6857142857142857em")
+                .setWidth("18em")
+                .setLabelSize("8em")
+                .setLabelCaption("Key")
+            );
+            
+            host.xui_ui_group6.append(
+                xui.create("xui.UI.Input")
+                .setHost(host,"xui_ui_input27")
+                .setLeft("-0.7619047619047619em")
+                .setTop("2.9714285714285715em")
+                .setWidth("18em")
+                .setLabelSize("8em")
+                .setLabelCaption("Value")
+            );
+            
+            host.xui_ui_group6.append(
+                xui.create("xui.UI.HTMLButton")
+                .setHost(host,"xui_ui_htmlbutton3")
+                .setLeft("7.619047619047619em")
+                .setTop("6.019047619047619em")
+                .setCaption("Update")
+            );
+            
+            append(
+                xui.create("xui.UI.Group")
+                .setHost(host,"xui_ui_group7")
+                .setLeft("28.19047619047619em")
+                .setTop("13.714285714285714em")
+                .setWidth("18em")
+                .setCaption("New")
+                .setToggleBtn(false)
+            );
+            
+            host.xui_ui_group7.append(
+                xui.create("xui.UI.Input")
+                .setHost(host,"xui_ui_input28")
+                .setLeft("-0.7619047619047619em")
+                .setTop("0em")
+                .setWidth("18em")
+                .setLabelSize("8em")
+                .setLabelCaption("Key")
+            );
+            
+            host.xui_ui_group7.append(
+                xui.create("xui.UI.Input")
+                .setHost(host,"xui_ui_input29")
+                .setLeft("-0.7619047619047619em")
+                .setTop("2.2857142857142856em")
+                .setWidth("18em")
+                .setLabelSize("8em")
+                .setLabelCaption("Value")
+            );
+            
+            host.xui_ui_group7.append(
+                xui.create("xui.UI.Button")
+                .setHost(host,"xui_ui_button9")
+                .setLeft("7.619047619047619em")
+                .setTop("5.257142857142857em")
+                .setCaption("Add New")
+            );
+            
+            append(
+                xui.create("xui.UI.Button")
+                .setHost(host,"xui_ui_button10")
+                .setLeft("28.19047619047619em")
+                .setTop("25.904761904761905em")
+                .setCaption("Delete Selected Row")
+            );
+            
+            append(
                 xui.create("Module.Firestore49", "xui.Module")
                 .setHost(host,"module_firestore491")
             );
